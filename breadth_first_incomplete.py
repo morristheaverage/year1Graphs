@@ -9,13 +9,18 @@ def bfs(G,a,b):
     G.add_nodes_from(G.nodes(), label = -1) # initialization of all labels
     G.node[a]['label'] = 0
 
+    queue = [a]
 
 
+    while len(queue) > 0 and G.node[b]['label'] == -1:
+        current = queue.pop(0)
+        for n in G.neighbors(current):
+            if G.node[n]['label'] == -1:  #if undiscovered
+                G.node[n]['label'] = G.node[current]['label'] + 1
+                queue.append(n)
 
-
-
-
-
+    
+    return G.node[b]['label']
 
 
 

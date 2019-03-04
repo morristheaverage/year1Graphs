@@ -9,8 +9,9 @@ import graph10
 
 def dfs(G,a,b,u):
     n = len(G.nodes())
-
-
+    global time
+    print(time == none)
+    
 
 
 
